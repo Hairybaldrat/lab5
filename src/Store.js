@@ -1,3 +1,7 @@
-export default function Store(){
-  return <div></div>
+import Cart from "./Cart.js"
+
+export default function Store() {
+  return <div>
+    <Cart />
+  </div>
 }
