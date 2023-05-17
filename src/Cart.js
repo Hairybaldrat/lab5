@@ -43,30 +43,30 @@ export default function Item() {
         <SearchBar handleAddToCart={handleAddToCart}></SearchBar >
       </Col>
       <Col>
-    <div className="grid-container"> {
-      Items.map(item => {
-        return (
-          <div className="box " key={item.id}>
-            <strong>{item.Name}</strong>
-            <img className="ItemImage" src={"/Images/" + item.Itemurl} alt={item.Name}></img>
-            <p>${item.Price}</p>
-            <button onClick={() => handleAddToCart(item)}>Add to cart</button>
-          </div >
-        )
-      })
+        <div className="grid-container"> {
+          Items.map(item => {
+            return (
+              <div className="box " key={item.id}>
+                <strong>{item.Name}</strong>
+                <img className="ItemImage" src={"/Images/" + item.Itemurl} alt={item.Name}></img>
+                <p>${item.Price}</p>
+                <button onClick={() => handleAddToCart(item)}>Add to cart</button>
+              </div >
+            )
+          })
         }
-          </div>
+        </div>
       </Col>
       <Col>
 
-    <div className="Cart">
-      <h1>Cart</h1>
-      <ul>
-        {cartItems.map((item) => (<li key={item.id}>{item.Name + " Amount " + item.quantity}<button onClick={() => handleRemoveFromCart(item)}> Remove </button></li>))}
-      </ul>
-      <h2>Total: <b>${cartTotal}</b></h2>
-      </div>
-           </Col>
+        <div className="Cart">
+          <h1>Cart</h1>
+          <ul>
+            {cartItems.map((item) => (<li key={item.id}>{item.Name + " Amount " + item.quantity}<button onClick={() => handleRemoveFromCart(item)}> Remove </button></li>))}
+          </ul>
+          <h2>Total: <b>${cartTotal}</b></h2>
+        </div>
+      </Col>
     </Row >
   </Container >
 }
