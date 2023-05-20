@@ -5,11 +5,12 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
+import "./Cart.css"
 
 export default function Item() {
 
-  const [cartItems, setCartItems] = useState([]);
-  const [cartTotal, setCartTotal] = useState(0);
+    const [cartItems, setCartItems] = useState([]);
+    const [cartTotal, setCartTotal] = useState(0);
 
   function handleAddToCart(item) {
     const index = cartItems.findIndex((cartItem) => cartItem.id === item.id);
@@ -37,32 +38,43 @@ export default function Item() {
     setCartTotal(cartTotal - item.Price);
   }
 
-  return <Container >
+  return <Container className="mt-4">
     <Row >
-      <Col>
+          <Col md="auto">
         <SearchBar handleAddToCart={handleAddToCart}></SearchBar >
       </Col>
-      <Col>
-        <div className="grid-container"> {
+          <Col>
+              <Container className="itemsbox">
+                  {
           Items.map(item => {
-            return (
-              <div className="box " key={item.id}>
-                <strong>{item.Name}</strong>
-                <img className="ItemImage" src={"/Images/" + item.Itemurl} alt={item.Name}></img>
-                <p>${item.Price}</p>
-                <button onClick={() => handleAddToCart(item)}>Add to cart</button>
-              </div >
+              return (
+
+                  <Container className="box mb-4" key={item.id}>
+                      <Row>
+                          <strong>{item.Name}</strong>
+                      </Row>
+                      <Row>
+                          <img className="ItemImage" src={"/Images/" + item.Itemurl} alt={item.Name}></img>
+                      </Row>
+                      <Row>
+                          <p>${item.Price}</p>
+                      </Row>
+                      <Row>
+                          <Button className="addbutt" variant="dark" onClick={() => handleAddToCart(item)}>Add to cart</Button>
+                      </Row>
+                      </Container >
+
             )
           })
-        }
-        </div>
+                      }
+              </Container>
       </Col>
-      <Col>
+          <Col md="3">
 
         <div className="Cart">
           <h1>Cart</h1>
           <ul>
-            {cartItems.map((item) => (<li key={item.id}>{item.Name + " Amount " + item.quantity}<button onClick={() => handleRemoveFromCart(item)}> Remove </button></li>))}
+            {cartItems.map((item) => (<li key={item.id}>{item.Name + " Amount " + item.quantity}<Button className="m-2" variant="dark" onClick={() => handleRemoveFromCart(item)}> Remove </Button></li>))}
           </ul>
           <h2>Total: <b>${cartTotal}</b></h2>
         </div>

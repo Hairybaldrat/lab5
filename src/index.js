@@ -6,7 +6,9 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from "./home.js"
 import Store from "./Store.js"
 import Navbarstore from "./Navbar.js"
+import About from "./About.js"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Contact from "./Contact.js"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +18,8 @@ root.render(
     <Routes >
         <Route path="/" element={<Home />} />
         <Route path="/Store" element={<Store />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/About" element={<About />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

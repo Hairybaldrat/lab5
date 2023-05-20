@@ -14,7 +14,10 @@ function Navbarstore() {
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="Store">Store</Nav.Link>
-            </Nav.Item>
+                      </Nav.Item>
+                      <Nav.Item>
+                          <Nav.Link href="Contact">Contact us</Nav.Link>
+                      </Nav.Item>
             <Nav.Item>
               <Nav.Link href="About">About us</Nav.Link>
               </Nav.Item>

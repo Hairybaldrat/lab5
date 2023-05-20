@@ -48,11 +48,11 @@ export default function Contact() {
   }
 
   return (<div className="Section reveal" id="Contact">
-    <div className="Contactbox">
+    <Container className="Contactbox mt-4">
       <Form onSubmit={handleSubmit}>
         <Container fluid>
           <Row>
-            <h1 className="contactTitle border-bottom pb-4"> Contact me </h1>
+            <h1 className="contactTitle border-bottom pb-4"> Contact Us </h1>
           </Row>
           <Row>
             <Form.Group>
@@ -103,7 +103,7 @@ export default function Contact() {
             </Col>
           </Row>
         </Container>
-      </Form>
-    </div>
+          </Form>
+      </Container>
   </div>);
 }
