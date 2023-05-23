@@ -76,7 +76,8 @@ export default function Item() {
           <ul>
             {cartItems.map((item) => (<li key={item.id}>{item.Name + " Amount " + item.quantity}<Button className="m-2" variant="dark" onClick={() => handleRemoveFromCart(item)}> Remove </Button></li>))}
           </ul>
-          <h2>Total: <b>${cartTotal}</b></h2>
+                  <h2>Total: <b>${cartTotal}</b></h2>
+          <Button>Purchase</Button>
         </div>
       </Col>
     </Row >
